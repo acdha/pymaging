@@ -7,7 +7,8 @@ import sys
 try:
     from vbench.api import Benchmark, GitRepo, BenchmarkRunner
     HAS_VBENCH = True
-except ImportError:
+except ImportError as exc:
+    print >>sys.stderr, "Couldn't load vbench: falling back to stdlib (%s)" % exc
     HAS_VBENCH = False
 
 PYMAGING_ROOT = os.path.realpath(os.path.join(os.path.dirname(__file__), '..'))
