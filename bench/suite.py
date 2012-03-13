@@ -12,7 +12,7 @@ except ImportError as exc:
     HAS_VBENCH = False
 
 PYMAGING_ROOT = os.path.realpath(os.path.join(os.path.dirname(__file__), '..'))
-OUTPUT_DIR = tempfile.gettempdir()
+OUTPUT_DIR = os.path.join(PYMAGING_ROOT, "bench", "output")
 
 
 def discover_benchmarks():
@@ -25,7 +25,7 @@ def discover_benchmarks():
 def run_vbench():
     START_DATE = datetime(2012, 2, 27)
     DB_PATH = os.path.join(PYMAGING_ROOT, 'bench', 'benchmarks.db')
-    REPO_URL = '..'
+    REPO_URL = PYMAGING_ROOT
 
     repo = GitRepo(PYMAGING_ROOT)
 

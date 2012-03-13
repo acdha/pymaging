@@ -8,3 +8,5 @@
 /build/
 /docs/_*
 /htmlcov/
+bench/output
+bench/benchmarks.db
