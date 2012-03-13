@@ -11,6 +11,9 @@ Files with different licenses:
     pymaging/formats/png_raw.py: MIT License, held by Johann C. Rocholl,
         David Jones and Nicko van Someren.
 
+    bench/corestats.py: LGPL, held by Corey Goldberg.
+        See http://www.goldb.org/corestats.html
+
 All other files are licensed under the BSD License:
 
 Copyright (c) 2012, Jonas Obrist
