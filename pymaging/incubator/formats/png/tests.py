@@ -54,11 +54,14 @@ class PNGTests(unittest.TestCase):
         
     def test_non_indexed_interlaced(self):
         img = Image.open_from_path(_get_filepath('black-white-non-indexed-interlaced-adam7.png'))
-        print(img.pixels)
         self.assertEqual(img.get_color(0, 0), BLACK)
         self.assertEqual(img.get_color(1, 1), BLACK)
         self.assertEqual(img.get_color(0, 1), WHITE)
         self.assertEqual(img.get_color(1, 0), WHITE)
-
-if __name__ == "__main__":
-    unittest.main()
+        
+    def test_with_transparency(self):
+        img = Image.open_from_path(_get_filepath('black-white-with-transparency.png'))
+        self.assertEqual(img.get_color(0, 0), BLACK)
+        self.assertEqual(img.get_color(1, 0), WHITE)
+        self.assertEqual(img.get_color(1, 1), BLACK.get_for_brightness(0.5))
+        self.assertEqual(img.get_color(0, 1), WHITE.get_for_brightness(0.5))
