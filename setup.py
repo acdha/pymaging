@@ -7,4 +7,5 @@ setup(
     name = "pymaging",
     version = "0.1",
     packages = find_packages(),
+    test_requires = ['benchmark-harness']
 )

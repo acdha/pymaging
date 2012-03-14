@@ -1,5 +1,7 @@
 import os
 
+from benchmark_harness.runners import run_benchmark
+
 from pymaging import Image
 
 def benchmark():
@@ -8,6 +10,4 @@ def benchmark():
     # Save for quality review
     i .save_to_path('simple.png')
 
-if __name__ == "__main__":
-    import timeit
-    print timeit.timeit("benchmark()", "from simple import benchmark", number=5)
+run_benchmark(benchmark)
