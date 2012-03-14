@@ -14,15 +14,16 @@ Pure Python imaging library.
 Running the benchmarks
 ======================
 
+The benchmarks use http://pypi.python.org/pypi/benchmark-harness. To run the
+benchmarks, you need to install benchmark-harness and will need PIL to run the
+comparison benchmarks::
+
+    pip install benchmark-harness PIL
+
 Each benchmark is a standalone script for simple testing::
 
-    python bench/benchmarks/simple.py
+    python benchmarks/simple/benchmark.py
 
 To run the entire suite::
 
-    python bench/suite.py
-
-You will have much nicer result output if you install numpy and vbench::
-
-    pip install numpy
-    pip install https://github.com/wesm/vbench/tarball/master
+    benchmark-harness --benchmark-dir=benchmarks
